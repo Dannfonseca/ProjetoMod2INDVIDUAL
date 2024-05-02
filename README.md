@@ -40,7 +40,7 @@ Obs.: Código para geração do banco de dados
 
 
 
-`CREATE TABLE EmpresasParceiras 
+CREATE TABLE EmpresasParceiras 
 ( 
  ID INT PRIMARY KEY AUTO_INCREMENT,  
  NomeEmpresa INT NOT NULL,  
@@ -109,7 +109,7 @@ ALTER TABLE Servicos ADD FOREIGN KEY(IDCliente) REFERENCES EmpresasParceiras (ID
 ALTER TABLE Equipes ADD FOREIGN KEY(IDProjeto) REFERENCES Projetos (IDProjeto)
 ALTER TABLE Tarefas ADD FOREIGN KEY(IDProjeto) REFERENCES EmpresasParceiras (IDProjeto)
 ALTER TABLE Tarefas ADD FOREIGN KEY(IDEquipe) REFERENCES EmpresasParceiras (IDEquipe)
-`
+
 
 ## Contribuição
 
