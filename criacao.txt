@@ -11,7 +11,7 @@ CREATE TABLE Colaboradores (
     NomeColaborador TEXT NOT NULL,
     Cargo TEXT NOT NULL,
     Email TEXT NOT NULL,
-    Telefone VARCHAR(n) NOT NULL,
+    Telefone VARCHAR(20) NOT NULL,
     IDEmpresaParceira INT NOT NULL,
     IDTarefas INT NOT NULL
 );
