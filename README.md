@@ -18,13 +18,13 @@ O modelo de banco de dados foi projetado para armazenar informações sobre empr
 
 ### Relacionamentos:
 
--Empresas Parceiras (1:N) Projetos
--Empresas Parceiras (1:N) Colaboradores
--Projetos (1:N) Tarefas
--Projetos (1:1) Equipes
--Clientes (1:N) Projetos
--Clientes (1:N) Serviços
--Colaboradores (1:N) Tarefas
+- Empresas Parceiras (1:N) Projetos
+- Empresas Parceiras (1:N) Colaboradores
+- Projetos (1:N) Tarefas
+- Projetos (1:1) Equipes
+- Clientes (1:N) Projetos
+- Clientes (1:N) Serviços
+- Colaboradores (1:N) Tarefas
 
 ## Arquivos no Repositório
 
