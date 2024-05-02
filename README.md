@@ -36,79 +36,10 @@ O modelo de banco de dados foi projetado para armazenar informações sobre empr
 
 O modelo de banco de dados pode ser implementado em um sistema de gerenciamento de projetos como o RESILIADATA. Os campos e tipos de dados são detalhados no arquivo README.
 
-Obs.: Código para geração do banco de dados
+Obs.: Código para geração do banco de dados está no arquivo TXT "criacao"
 
 
 
-CREATE TABLE EmpresasParceiras 
-( 
- ID INT PRIMARY KEY AUTO_INCREMENT,  
- NomeEmpresa INT NOT NULL,  
- SetorAtuacao INT NOT NULL,  
- Endereco INT NOT NULL,  
- Contato INT NOT NULL,  
-); 
-
-CREATE TABLE Colaboradores 
-( 
- ID INT PRIMARY KEY AUTO_INCREMENT,  
- NomeColaborador INT NOT NULL,  
- Cargo INT NOT NULL,  
- Email INT NOT NULL,  
- Telefone VARCHAR(n) NOT NULL,  
- IDEmpresaParceira INT NOT NULL,  
- IDTarefas INT NOT NULL,  
-); 
-
-CREATE TABLE Projetos 
-( 
- ID INT PRIMARY KEY AUTO_INCREMENT,  
- NomeProjeto INT NOT NULL,  
- Descricao INT,  
- DataInicio DATE NOT NULL,  
- DataTermino DATE NOT NULL,  
- IDCliente INT,  
-); 
-
-CREATE TABLE Servicos 
-( 
- ID INT PRIMARY KEY AUTO_INCREMENT,  
- DescricaoServico INT NOT NULL,  
- Valor FLOAT NOT NULL,  
- IDCliente INT NOT NULL,  
-); 
-
-CREATE TABLE Clientes 
-( 
- ID INT PRIMARY KEY AUTO_INCREMENT,  
- NomeCliente INT NOT NULL,  
- Setor INT NOT NULL,  
- Contato INT NOT NULL,  
-); 
-
-CREATE TABLE Equipes 
-( 
- ID INT PRIMARY KEY AUTO_INCREMENT,  
- NomeEquipe INT NOT NULL,  
- IDProjeto VARCHAR(n) NOT NULL,  
-); 
-
-CREATE TABLE Tarefas 
-( 
- ID INT PRIMARY KEY AUTO_INCREMENT,  
- DescricaoTarefa INT NOT NULL,  
- DataInicio DATE NOT NULL,  
- DateTermino DATE NOT NULL,  
- IDProjeto INT,  
- IDEquipe INT NOT NULL,  
-); 
-
-ALTER TABLE Colaboradores ADD FOREIGN KEY(IDEmpresaParceira) REFERENCES EmpresasParceiras (IDEmpresaParceira)
-ALTER TABLE Colaboradores ADD FOREIGN KEY(IDTarefas) REFERENCES Tarefas (IDTarefas)
-ALTER TABLE Servicos ADD FOREIGN KEY(IDCliente) REFERENCES EmpresasParceiras (IDCliente)
-ALTER TABLE Equipes ADD FOREIGN KEY(IDProjeto) REFERENCES Projetos (IDProjeto)
-ALTER TABLE Tarefas ADD FOREIGN KEY(IDProjeto) REFERENCES EmpresasParceiras (IDProjeto)
-ALTER TABLE Tarefas ADD FOREIGN KEY(IDEquipe) REFERENCES EmpresasParceiras (IDEquipe)
 
 
 ## Contribuição
