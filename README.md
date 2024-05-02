@@ -36,7 +36,10 @@ O modelo de banco de dados foi projetado para armazenar informações sobre empr
 
 O modelo de banco de dados pode ser implementado em um sistema de gerenciamento de projetos como o RESILIADATA. Os campos e tipos de dados são detalhados no arquivo README.
 
-Obs.: Código para deração do banco de dados
+Obs.: Código para geração do banco de dados
+
+
+
 `CREATE TABLE EmpresasParceiras 
 ( 
  ID INT PRIMARY KEY AUTO_INCREMENT,  
@@ -106,8 +109,6 @@ ALTER TABLE Servicos ADD FOREIGN KEY(IDCliente) REFERENCES EmpresasParceiras (ID
 ALTER TABLE Equipes ADD FOREIGN KEY(IDProjeto) REFERENCES Projetos (IDProjeto)
 ALTER TABLE Tarefas ADD FOREIGN KEY(IDProjeto) REFERENCES EmpresasParceiras (IDProjeto)
 ALTER TABLE Tarefas ADD FOREIGN KEY(IDEquipe) REFERENCES EmpresasParceiras (IDEquipe)
-
-
 `
 
 ## Contribuição
