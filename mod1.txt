@@ -1,0 +1,105 @@
+1. Quais são as entidades necessárias?;
+
+Empresas parceiras, Colaboradores, Projetos, Clientes, Tarefas, Equipes
+--------------------------------------------------------------------------------------------------
+2. Quais são os principais campos e seus respectivos tipos?;
+Empresas Parceiras:
+ID (Chave Primária, Int
+NomeEmpresa (Text)
+Endereço (Text)
+Contato (Text)
+-------------------
+Projetos:
+ID (Chave Primária, Int)
+Nome (Texto)
+EmpresaID (FK Empresas Parceiras)
+IDCliente (FK Clientes)
+-------------------
+Tarefas:
+ID (Chave Primária, Int)
+IDProjeto (FK Projetos)
+IDClientes (FK Clientes)
+-------------------
+Equipes:
+ID (Chave Primária, Int)
+IDProjeto (FK Projetos)
+-------------------
+Clientes:
+ID (Chave Primária, Int)
+-------------------
+Serviços:
+ID (Chave Primária, Int)
+IDCliente (FK Clientes)
+-------------------
+Colaboradores:
+ID (Chave Primária, Int)
+IDEmpresaParceira (FK EmpresasParceiras)
+--------------------------------------------------------------------------------------------------
+3. Como essas entidades estão relacionadas?;
+Empresas Parceiras (1:N) Projetos
+Empresas Parceiras (1:N) Colaboradores
+Projetos (1:N) Tarefas
+Projetos (1:1) Equipes
+Clientes (1:N) Projetos
+Clientes (1:N) Serviços
+Colaboradores (1:N) Tarefas
+--------------------------------------------------------------------------------------------------
+4. Simule 2 registros para cada entidade.
+
+Empresas Parceiras:
+
+ID: 1
+NomeEmpresa: Resilia
+Endereço: Rua da Resilia 286, Cavalcante
+Contato: contato@resilia.com
+ID: 2
+NomeEmpresa: Senac
+Endereço: Rua Bambina S/N
+Contato: contato@senac.com
+
+Projetos:
+
+ID: 1
+Nome: Projeto X
+EmpresaID: 1 (Resilia)
+IDCliente: 1
+ID: 2
+Nome: Projeto Y
+EmpresaID: 2 (Senac)
+IDCliente: 2
+
+Tarefas:
+
+ID: 1
+IDProjeto: 1
+IDClientes: 1
+ID: 2
+IDProjeto: 2
+IDClientes: 2
+
+Equipes:
+
+ID: 1
+IDProjeto: 1
+ID: 2
+IDProjeto: 2
+
+Clientes:
+
+ID: 1
+ID: 2
+
+Serviços:
+
+ID: 1
+IDCliente: 1
+ID: 2
+IDCliente: 2
+
+Colaboradores:
+
+ID: 1
+IDEmpresaParceira: 1 (Resilia)
+ID: 2
+IDEmpresaParceira: 2 (Senac)
+--------------------------------------------------------------------------------------------------
